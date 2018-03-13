@@ -2,6 +2,8 @@
 
 > vue encapsulation element-ui
 
+    使用vue 进一步封装 element-UI部分常用模块，减少模版代码量，更加简洁
+
 ## Build Setup
 
 ``` bash
