@@ -26,15 +26,6 @@
 				</template>
 			</vue-table-column>
 		</template>
-		<template slot="operate" slot-scope="scope">
-			<el-button
-	            size="mini"
-	            @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-	        <el-button
-	            size="mini"
-	            type="danger"
-	            @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-		</template>
 		<template slot="expand" slot-scope="props">
 			<el-form label-position="left" inline class="demo-table-expand">
 	          <el-form-item label="姓名">
@@ -125,37 +116,35 @@
 			        city: '普陀区',
 			        detail: '金沙江路 1518 弄',
 		            address: '上海市普陀区金沙江路 1518 弄'
-		          }
-		         //  , {
-		         //    date: '2016-05-04',
-		         //    name: '王小虎',
-		         //    province: '上海',
-			        // city: '普陀区',
-			        // detail: '金沙江路 1517 弄'
-		         //    // address: '上海市普陀区金沙江路 1517 弄'
-		         //  }, {
-		         //    date: '2016-05-01',
-		         //    name: '王小虎',
-		         //    province: '上海',
-			        // city: '普陀区',
-			        // detail: '金沙江路 1519 弄'
-		         //    // address: '上海市普陀区金沙江路 1519 弄'
-		         //  }, {
-		         //    date: '2016-05-03',
-		         //    name: '王小虎',
-		         //    province: '上海',
-			        // city: '普陀区',
-			        // detail: '金沙江路 15186 弄'
-		         //    // address: '上海市普陀区金沙江路 1516 弄'
-		         //  }, {
-		         //    date: '2016-05-08',
-		         //    name: '王小虎',
-		         //    province: '上海',
-			        // city: '普陀区',
-			        // detail: '金沙江路 15180 弄'
-		         //    // address: '上海市普陀区金沙江路 1516 弄'
-		         //  }
-		         ]
+		          }, {
+		            date: '2016-05-04',
+		            name: '王小虎',
+		            province: '上海',
+			        city: '普陀区',
+			        detail: '金沙江路 1517 弄',
+		            address: '上海市普陀区金沙江路 1517 弄'
+		          }, {
+		            date: '2016-05-01',
+		            name: '王小虎',
+		            province: '上海',
+			        city: '普陀区',
+			        detail: '金沙江路 1519 弄',
+		            address: '上海市普陀区金沙江路 1519 弄'
+		          }, {
+		            date: '2016-05-03',
+		            name: '王小虎',
+		            province: '上海',
+			        city: '普陀区',
+			        detail: '金沙江路 15186 弄',
+		            address: '上海市普陀区金沙江路 1516 弄'
+		          }, {
+		            date: '2016-05-08',
+		            name: '王小虎',
+		            province: '上海',
+			        city: '普陀区',
+			        detail: '金沙江路 15180 弄',
+		            address: '上海市普陀区金沙江路 1516 弄'
+		          }]
 		        },
 		        sortObj: {prop: 'date', order: 'descending'},
 		        isExpand: true,

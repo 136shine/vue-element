@@ -23,7 +23,6 @@
     <template>
       <slot name="column"></slot>
     </template>
-
     
   </el-table>
 </template>
