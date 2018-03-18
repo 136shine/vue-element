@@ -6,9 +6,9 @@
 
  ### 一、table
  	
-  调用示例： 
+  调用示例：</br> 
  	1、template 示例
-  ```
+```vue
  	<d-table :tableData="table.data" :tableKey="table.key" :isExpand="isExpand" :isExpandOnly="isExpandOnly" :sortObj="sortObj" :isCheckbox="isCheckbox" :maxHeight="maxHei" ref="p_table">
  		<!-- table的 可配置的和递归column 插入到 d-table组件的el-table中-->
 		<template slot="column">
@@ -31,11 +31,11 @@
 			......
 		</template>
 	</d-table>	
-	```
+```
   
 2、数据data 示例
   
-	```
+```vue
 		// 表格数据样式
 		table: {
           key: [{
@@ -97,11 +97,7 @@
         isExpandOnly: true, // 是否唯一展开
         isCheckbox: true, // 是否添加可选选项
         maxHei: 350 // 最大高度
-	```
-
-
-
-
+```
 
 ## Build Setup
 
