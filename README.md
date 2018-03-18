@@ -4,10 +4,11 @@
 
    根据工作时的需求，进一步封装 element-UI部分常用模块，减少element-UI模版代码量，更加简洁
 
- 一、table
- 	调用示例： 
+ ### 一、table
+ 	
+  调用示例： 
  	1、template 示例
- 	``` 
+  ```
  	<d-table :tableData="table.data" :tableKey="table.key" :isExpand="isExpand" :isExpandOnly="isExpandOnly" :sortObj="sortObj" :isCheckbox="isCheckbox" :maxHeight="maxHei" ref="p_table">
  		<!-- table的 可配置的和递归column 插入到 d-table组件的el-table中-->
 		<template slot="column">
@@ -31,7 +32,9 @@
 		</template>
 	</d-table>	
 	```
+  
 	2、数据data 示例
+  
 	```
 		// 表格数据样式
 		table: {
@@ -111,6 +114,5 @@ npm run dev
 
 # build for production with minification
 npm run build
-
 ```
 
