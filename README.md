@@ -9,7 +9,7 @@
   调用示例：</br> 
  	1、template 示例
 ```vue
- 	<d-table :tableData="table.data" :tableKey="table.key" :isExpand="isExpand" :isExpandOnly="isExpandOnly" :sortObj="sortObj" :isCheckbox="isCheckbox" :maxHeight="maxHei" ref="p_table">
+<d-table :tableData="table.data" :tableKey="table.key" :isExpand="isExpand" :isExpandOnly="isExpandOnly" :sortObj="sortObj" :isCheckbox="isCheckbox" :maxHeight="maxHei" ref="p_table">
  		<!-- table的 可配置的和递归column 插入到 d-table组件的el-table中-->
 		<template slot="column">
 			<!-- table的 column 组件-->
@@ -30,73 +30,73 @@
 		<template slot="expand" slot-scope="props">
 			......
 		</template>
-	</d-table>	
+</d-table>	
 ```
   
 2、数据data 示例
   
 ```vue
-		// 表格数据样式
-		table: {
-          key: [{
-          	label: '日期', 
-          	value: 'date', 
-          	template: true, 是否自定义列的内容
-          	isSortable: true, 是否列排序
-          	width: 180
-          }, {
-          	label: '姓名', 
-          	value: 'name', 
-          	template: true, 
-          	width: 180
-          }, {
-          	label: '地址',
-          	value: 'address', 
-          	template: false,
-          	child: [{
-          		label: '省份', 
-          		value: 'province', 
-          		template: false, 
-          		isSortable: true, 
-          		width: 120
-          	}, {
-          		label: '市区', 
-          		value: 'city', 
-          		template: false, 
-          		width: 120
-          	}, {
-          		label: '详细地址', 
-          		value: 'detail', 
-          		template: false, 
-          		width: 220
-          	}]
-          }, {
-          	label: '操作', 
-          	value: 'operate', 
-          	template: true,
-          	width: 300
-          }],
-          data: [{
-            date: '2016-05-02',
-            name: '王小虎',
-        	province: '上海',
-	        city: '普陀区',
-	        detail: '金沙江路 1518 弄',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }, {
-            date: '2016-05-08',
-            name: '王小虎',
-            province: '上海',
-	        city: '普陀区',
-	        detail: '金沙江路 15180 弄',
-            address: '上海市普陀区金沙江路 1516 弄'
-          }]
-        },
-        sortObj: {prop: 'date', order: 'descending'}, // 排序规则
-        isExpand: true, // 是否添加展开选项
-        isExpandOnly: true, // 是否唯一展开
-        isCheckbox: true, // 是否添加可选选项
-        maxHei: 350 // 最大高度
+// 表格数据样式
+table: {
+  key: [{
+    label: '日期', 
+    value: 'date', 
+    template: true, 是否自定义列的内容
+    isSortable: true, 是否列排序
+    width: 180
+  }, {
+    label: '姓名', 
+    value: 'name', 
+    template: true, 
+    width: 180
+  }, {
+    label: '地址',
+    value: 'address', 
+    template: false,
+    child: [{
+        label: '省份', 
+        value: 'province', 
+        template: false, 
+        isSortable: true, 
+        width: 120
+      }, {
+        label: '市区', 
+        value: 'city', 
+        template: false, 
+        width: 120
+      }, {
+        label: '详细地址', 
+        value: 'detail', 
+        template: false, 
+        width: 220
+      }]
+    }, {
+      label: '操作', 
+      value: 'operate', 
+      template: true,
+      width: 300
+    }],
+    data: [{
+      date: '2016-05-02',
+      name: '王小虎',
+    province: '上海',
+    city: '普陀区',
+    detail: '金沙江路 1518 弄',
+      address: '上海市普陀区金沙江路 1518 弄'
+    }, {
+      date: '2016-05-08',
+      name: '王小虎',
+      province: '上海',
+    city: '普陀区',
+    detail: '金沙江路 15180 弄',
+      address: '上海市普陀区金沙江路 1516 弄'
+    }]
+  },
+  sortObj: {prop: 'date', order: 'descending'}, // 排序规则
+  isExpand: true, // 是否添加展开选项
+  isExpandOnly: true, // 是否唯一展开
+  isCheckbox: true, // 是否添加可选选项
+  maxHei: 350 // 最大高度
 ```
 
 ## Build Setup
