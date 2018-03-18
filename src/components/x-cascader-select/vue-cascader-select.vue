@@ -1,13 +1,13 @@
 <template>
 	<div class="wrap" :class="[pForm,tableData,rIndex,optsAll]" ref="c_select">
-		<el-single-select :options="optTemp1" :food="pForm.address1" @tableChange="getChildChange1"></el-single-select>
-		<el-single-select :options="optTemp2" :food="pForm.address2" @tableChange="getChildChange2"></el-single-select>
-		<el-single-select :options="optTemp3" :food="pForm.address3" @tableChange="getChildChange3"></el-single-select>
+		<x-single-select :options="optTemp1" :food="pForm.address1" @tableChange="getChildChange1"></x-single-select>
+		<x-single-select :options="optTemp2" :food="pForm.address2" @tableChange="getChildChange2"></x-single-select>
+		<x-single-select :options="optTemp3" :food="pForm.address3" @tableChange="getChildChange3"></x-single-select>
 	</div>
 </template>
 
 <script>
-	import elSingleSelect from './vue-single-select'
+	import xSingleSelect from '../x-single-select/vue-single-select'
 	export default {
 	    data() {
 	      return {
@@ -24,7 +24,7 @@
 	    		console.log(this.pForm, this.tableData)
 	    	})
 	    },
-	    components: { elSingleSelect },
+	    components: { xSingleSelect },
 	    props: ['optsAll', 'pForm', 'tableData', 'rIndex'],
 	    methods: {
 	    	handleSelectChange(val, optArr, index) {

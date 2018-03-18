@@ -28,7 +28,7 @@
 		  width="30%">
 		  <el-form ref="form" :model="form" label-width="80px" style="width: 300px">
 	  		<el-form-item label="食品">
-				<el-single-select :options="opts" :food="form.food" @tableChange="getChildChange"></el-single-select>
+				<x-single-select :options="opts" :food="form.food" @tableChange="getChildChange"></x-single-select>
 			</el-form-item>
 		  </el-form>
 		  <span slot="footer" class="dialog-footer">
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-	import elSingleSelect from './vue-single-select'
+	import xSingleSelect from './vue-single-select'
 	export default {
 	    data() {
 	      return {
@@ -74,7 +74,7 @@
 	        }
 	      }
 	    },
-	    components: { elSingleSelect },
+	    components: { xSingleSelect },
 	    mounted() {
 	    	this.$nextTick(function () {
 	    		this.handleTableChange(this.tableData, this.opts, 'alias')
