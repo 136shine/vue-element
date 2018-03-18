@@ -10,26 +10,26 @@
  	1、template 示例
 ```vue
 <d-table :tableData="table.data" :tableKey="table.key" :isExpand="isExpand" :isExpandOnly="isExpandOnly" :sortObj="sortObj" :isCheckbox="isCheckbox" :maxHeight="maxHei" ref="p_table">
- 		<!-- table的 可配置的和递归column 插入到 d-table组件的el-table中-->
-		<template slot="column">
-			<!-- table的 column 组件-->
-			<vue-table-column :tKey="table.key" v-for="(item, key) in table.key" :item="item" :key="key">
-				<!-- template 中是自定义列的内容，为了插入到vue-table-column组件，与elment-ui一一致 -->
-				......
+  <!-- table的 可配置的和递归column 插入到 d-table组件的el-table中-->
+  <template slot="column">
+    <!-- table的 column 组件-->
+    <vue-table-column :tKey="table.key" v-for="(item, key) in table.key" :item="item" :key="key">
+      <!-- template 中是自定义列的内容，为了插入到vue-table-column组件，与elment-ui一一致 -->
+      ......
 
-				<template slot="name" slot-scope="scope">
-			        ......
-			        ......
-				</template>
+      <template slot="name" slot-scope="scope">
+            ......
+            ......
+      </template>
 
-				......
+      ......
 
-			</vue-table-column>
-		</template>
-		<!-- table的可展开功能（可选）-->
-		<template slot="expand" slot-scope="props">
-			......
-		</template>
+    </vue-table-column>
+  </template>
+  <!-- table的可展开功能（可选）-->
+  <template slot="expand" slot-scope="props">
+    ......
+  </template>
 </d-table>	
 ```
   
