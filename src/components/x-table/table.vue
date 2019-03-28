@@ -1,7 +1,8 @@
 <template>
-	<d-table :tableData="table.data" :tableKey="table.key" :isExpand="isExpand" :isExpandOnly="isExpandOnly" :sortObj="sortObj" :isCheckbox="isCheckbox" :maxHeight="maxHei" ref="p_table">
+	<x-table :tableData="table.data" :tableKey="table.key" :isExpand="isExpand" :isExpandOnly="isExpandOnly" :sortObj="sortObj" :isCheckbox="isCheckbox" :maxHeight="maxHei" ref="p_table">
 		<template slot="column">
-			<vue-table-column :tKey="table.key" v-for="(item, key) in table.key" :item="item" :key="key">
+			<x-table-col :tKey="table.key" v-for="(item, key) in table.key" :item="item" :key="key">
+        // 以下template 都是通过slot分发内容，开发者可以按需求自行添加
 				<template slot="date" slot-scope="scope">
 					<i class="el-icon-time"></i>
 				  	<span style="margin-left: 10px">{{ scope.row.date }}</span>
@@ -15,6 +16,7 @@
 			          	</div>
 			        </el-popover>
 				</template>
+         // 用户交互操作（删除、编辑行）
 				<template slot="operate" slot-scope="scope">
 					<el-button
 			            size="mini"
@@ -24,8 +26,9 @@
 			            type="danger"
 			            @click="handleDelete(scope.$index, scope.row)">删除</el-button>
 				</template>
-			</vue-table-column>
+			</x-table-col>
 		</template>
+    // 展开行操作
 		<template slot="expand" slot-scope="props">
 			<el-form label-position="left" inline class="demo-table-expand">
 	          <el-form-item label="姓名">
@@ -36,36 +39,12 @@
 	          </el-form-item>
 	        </el-form>
 		</template>
-
-		<!-- <template slot="date" slot-scope="scope">
-			<i class="el-icon-time"></i>
-		  	<span style="margin-left: 10px">{{ scope.row.date }}</span>
-		</template>
-		<template slot="name" slot-scope="scope">
-	        <el-popover trigger="hover" placement="top">
-	          	<p>姓名: {{ scope.row.name }}</p>
-	          	<p>住址: {{ scope.row.address }}</p>
-	          	<div slot="reference" class="name-wrapper">
-	            	<el-tag size="medium">{{ scope.row.name }}</el-tag>
-	          	</div>
-	        </el-popover>
-		</template>
-		<template slot="operate" slot-scope="scope">
-			<el-button
-	            size="mini"
-	            @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-	        <el-button
-	            size="mini"
-	            type="danger"
-	            @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-		</template> -->
-
-	</d-table>	
+	</x-table>	
 </template>
 
 <script>
-	import dTable from './vue-table2'
-	import vueTableColumn from './vue-table-column'
+	import xTable from './x-table'
+	import xTableCol from './x-table-col'
 
 	export default {
 		data () {
@@ -154,13 +133,10 @@
 			}
 		},
 		mounted () {},
-		components: { dTable, vueTableColumn },
+		components: { xTable, xTableCol },
 		methods: {
 	      	handleEdit(index, row) {
-	      		// 解决 点击编辑打开展开行的问题
-	        	// if(this.isExpand && this.isExpandOnly){
-		        //   	this.$refs.p_table.$refs.x_table.store.states.expandRows = !this.$refs.p_table.$refs.x_table.store.states.expandRows.length ? [row] : []
-		        // }
+	      		console.log(index, row);
 	      	},
 	      	handleDelete(index, row) {
 	        	console.log(index, row);
